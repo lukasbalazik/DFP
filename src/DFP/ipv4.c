@@ -7,15 +7,30 @@
 
 void ips_iterator_init(iterator *i, char *data, int datalen)
 {
-    i->pfIterate = iterate;
+    i->pfIterate = iterate_ip;
     i->original_position = data;
     i->actual_position = data;
     i->original_data_length = datalen;
     i->total_parsed = 0;
 }
 
+vector get_all_ips(char *c) {
+    int datalen = strlen(c);
+    
+    vector founded_ip;
+    vector_init(&founded_ip);
 
-char *iterate(iterator *i)
+    iterator i;
+    ips_iterator_init(&i, c, datalen);
+
+    while(strlen(c = i.pfIterate(&i))) { 
+        founded_ip.pfVectorAdd(&founded_ip, c);
+    }
+
+    return founded_ip;
+}
+
+char *iterate_ip(iterator *i)
 {
     int len;
     for (char *p = i->actual_position; p != i->original_position+i->original_data_length; p++) {
@@ -34,22 +49,6 @@ char *iterate(iterator *i)
     }
 
     return i->original_position+i->original_data_length;
-}
-
-vector get_all_ips(char *c) {
-    int datalen = strlen(c);
-    
-    vector founded_ip;
-    vector_init(&founded_ip);
-
-    iterator i;
-    ips_iterator_init(&i, c, datalen);
-
-    while(strlen(c = i.pfIterate(&i))) { 
-        founded_ip.pfVectorAdd(&founded_ip, c);
-    }
-
-    return founded_ip;
 }
 
 int check_octet(char **p, char *cend) 

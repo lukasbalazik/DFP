@@ -1,9 +1,9 @@
 CC=gcc
 CFLAGS=-Wall -O3 -Ofast -Iinclude -Itests
-OBJ=src/DFP/ipv4.o src/vector.o tests/readfile.o
+OBJ=src/DFP/ipv4.o src/DFP/domain.o src/vector.o tests/readfile.o
 TEST1=tests/benchmark_iterator.o 
 TEST2=tests/benchmark_with_vectors.o 
-DEPS=include/vector.h include/iterator.h include/DFP/ipv4.h
+DEPS=include/vector.h include/iterator.h include/DFP/ipv4.h include/DFP/domain.h
 BUILD=build
 
 all: create_build $(BUILD)/benchmark_iterator $(BUILD)/benchmark_with_vectors

@@ -34,20 +34,25 @@ Number of Processors: 1
 Now run benchmark:
 
 ```bash
-$ ./build/benchmark_with_vectors log_examples/suricata.log
-Benchmark with vectors parsing takes: 0.021117
+$ ./build/benchmark_with_vectors
+IPv4 DFP benchmark with vectors parsing takes: 0.017169
+Domain DFP benchmark with vectors parsing takes: 0.019172
 ```
 
 when we get size of logfile we can calculate per second speed of parsing:
 
 ```bash
-$ ls -la log_examples/suricata.log
+$ ls -la log_examples/*
+-rw-r--r--  1 regusr  wheel   4541157 Jul 21 12:54 log_examples/apache_access.log
 -rw-r--r--  1 regusr  staff  26214400 Jul 21 09:19 log_examples/suricata.log
-$ echo "1/0.021117*26214400" | bc
-1232076800
+$ echo "1/0.017169*26214400" | bc
+1520435200
+$ echo "1/0.019172*4541157" | bc
+236140164
 ```
 
-And 1232076800 bytes is **9.18** Gb per second on singlecore parser
+For IPv4 addresses 1520435200 bytes is around **11.3** Gb per second on singlecore parser
+For domains 236140164 bytes is around **1.7** Gb per second on singlecore parser
 
 ## Usage
 
