@@ -17,8 +17,8 @@ For example DFP/ipv4:
 ## Installation
 
 ```bash
-$ git clone https://github.com/lukasbalazik123/dfp.git
-$ cd dfp
+$ git clone https://github.com/lukasbalazik123/DFP.git
+$ cd DFP
 $ make
 ```
 
