@@ -52,6 +52,7 @@ $ echo "1/0.019172*4541157" | bc
 ```
 
 For IPv4 addresses 1520435200 bytes is around **11.3** Gb per second on singlecore parser
+
 For domains 236140164 bytes is around **1.7** Gb per second on singlecore parser
 
 ## Usage
