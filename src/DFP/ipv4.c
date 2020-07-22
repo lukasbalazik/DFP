@@ -17,17 +17,17 @@ void ips_iterator_init(iterator *i, char *data, int datalen)
 vector get_all_ips(char *c) {
     int datalen = strlen(c);
     
-    vector founded_ip;
-    vector_init(&founded_ip);
+    vector found_ip;
+    vector_init(&found_ip);
 
     iterator i;
     ips_iterator_init(&i, c, datalen);
 
     while(strlen(c = i.pfIterate(&i))) { 
-        founded_ip.pfVectorAdd(&founded_ip, c);
+        found_ip.pfVectorAdd(&found_ip, c);
     }
 
-    return founded_ip;
+    return found_ip;
 }
 
 char *iterate_ip(iterator *i)
