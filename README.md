@@ -10,7 +10,7 @@ If all chars satisfy all states, subchar is returned (in few cases like ipv4 can
 
 For example DFP/ipv4:
 
-```Hello 127.0.0.1 IP```
+```Heello 127.0.0.1 IP```
 
 ![ipv4](./doc/ipv4.png)
 
@@ -43,7 +43,7 @@ when we get size of logfile we can calculate per second speed of parsing:
 
 ```bash
 $ ls -la log_examples/*
--rw-r--r--  1 regusr  wheel   4541157 Jul 21 12:54 log_examples/apache_access.log
+-rw-r--r--  1 regusr  staff   4541157 Jul 21 12:54 log_examples/apache_access.log
 -rw-r--r--  1 regusr  staff  26214400 Jul 21 09:19 log_examples/suricata.log
 $ echo "1/0.017169*26214400" | bc
 1520435200
