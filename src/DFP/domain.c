@@ -19,18 +19,18 @@ void domain_iterator_init(iterator *i, char *data, int datalen)
 vector get_all_domains(char *c) {
     int datalen = strlen(c);
 
-    vector founded_domains;
-    vector_init(&founded_domains);
+    vector found_domains;
+    vector_init(&found_domains);
 
     iterator i;
     domain_iterator_init(&i, c, datalen);
 
     while(strlen(c = i.pfIterate(&i))) {
         if (is_ipv4(c, c, i.original_position+i.original_data_length) < 0)
-            founded_domains.pfVectorAdd(&founded_domains, c);
+            found_domains.pfVectorAdd(&found_domains, c);
     }
 
-    return founded_domains;
+    return found_domains;
 }
 
 char *iterate_domain(iterator *i)
