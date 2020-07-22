@@ -10,6 +10,7 @@ struct sIterator {
     char *actual_position;
     int original_data_length;
     int total_parsed;
+    int hash_type;
 };
 
 #endif
